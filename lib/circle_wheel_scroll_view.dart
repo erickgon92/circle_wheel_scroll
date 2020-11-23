@@ -340,7 +340,8 @@ int _getItemFromOffset({
   double minScrollExtent,
   double maxScrollExtent,
 }) {
-  return (_clipOffsetToScrollableRange(offset, minScrollExtent, maxScrollExtent) / itemExtent).round();
+ return (_clipOffsetToScrollableRange(offset, minScrollExtent ?? -double.infinity,
+      maxScrollExtent ?? double.infinity) / itemExtent).round();
 }
 
 double _clipOffsetToScrollableRange(
